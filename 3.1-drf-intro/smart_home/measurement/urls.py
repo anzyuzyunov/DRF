@@ -1,9 +1,7 @@
 from django.urls import path
 
-from measurement.views import SensorView, SensViewOne, AllInf, MesInf, SensorCreate, SensorUpdate, MesCreate, SensorSet
-from rest_framework.routers import DefaultRouter
-r = DefaultRouter()
-r.register('sensor_new', SensorSet)
+from measurement.views import SensorView, SensViewOne, AllInf, MesInf, SensorCreate, SensorUpdate, MesCreate
+
 
 urlpatterns = [
     path('sensors/', SensorView.as_view()),
@@ -13,4 +11,5 @@ urlpatterns = [
     path('sensor/<pk>/', SensViewOne.as_view()),
     path('sensor_cr/', SensorCreate.as_view()),
     path('mes_cr/', MesCreate.as_view()),
-] + r.urls
+
+]

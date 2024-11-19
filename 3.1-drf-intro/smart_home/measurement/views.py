@@ -11,7 +11,7 @@ from rest_framework.viewsets import ModelViewSet
 
 from .models import Sensor, Measurement
 
-from .serializers import SensorSerializer, SensorDetailSerializer, MeasurementSerializer, NewSensorSerializer
+from .serializers import SensorSerializer, SensorDetailSerializer, MeasurementSerializer
 
 
 class SensorView(ListAPIView):
@@ -24,7 +24,7 @@ class SensorCreate(ListCreateAPIView):
 
 
 class SensorUpdate(RetrieveUpdateAPIView):
-    queryset = Sensor.objects.all
+    queryset = Sensor.objects.all()
     serializer_class = SensorSerializer
 
 class SensViewOne(RetrieveAPIView):
@@ -45,6 +45,3 @@ class MesCreate(ListCreateAPIView):
     serializer_class = MeasurementSerializer
 
 
-class SensorSet(ModelViewSet):
-    queryset = Sensor.objects.all()
-    serializer_class = SensorSerializer

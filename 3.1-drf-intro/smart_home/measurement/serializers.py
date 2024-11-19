@@ -13,7 +13,7 @@ class SensorSerializer(serializers.ModelSerializer):
         # fields = ['id','name','description', 'sensors_inf']
         fields = ['id','name','description']
         # fields = '__all__'
-        write_only = True
+        # write_only = True
         many = True
 
     # def save(self, **kwargs):
@@ -26,7 +26,7 @@ class MeasurementSerializer(serializers.ModelSerializer):
     class Meta:
         model = Measurement
         fields = ['sensors','date_of_measurement','temperature']
-        write_only = True
+        # write_only = True
 
 class SensorDetailSerializer(serializers.ModelSerializer):
 
@@ -37,9 +37,5 @@ class SensorDetailSerializer(serializers.ModelSerializer):
         fields = ['id', 'name', 'description', 'sensors_inf',]
 
 
-class NewSensorSerializer(serializers.ModelSerializer):
 
-    class Meta:
-        model = Measurement
-        fields = ['sensors', 'temperature']
 
