@@ -1,15 +1,11 @@
 from django.urls import path
 
-from measurement.views import SensorView, SensViewOne, AllInf, MesInf, SensorCreate, SensorUpdate, MesCreate
+from measurement.views import SensorCreate, SensorUpdate, MesCreate
 
 
 urlpatterns = [
-    path('sensors/', SensorView.as_view()),
-    path('sensor_up/<pk>/', SensorUpdate.as_view()),
-    path('sensors_inf/', AllInf.as_view()),
-    path('MesInf/', MesInf.as_view()),
-    path('sensor/<pk>/', SensViewOne.as_view()),
-    path('sensor_cr/', SensorCreate.as_view()),
-    path('mes_cr/', MesCreate.as_view()),
+    path('sensors/<pk>/', SensorUpdate.as_view()),
+    path('sensors/', SensorCreate.as_view()),
+    path('measurements/', MesCreate.as_view()),
 
 ]
